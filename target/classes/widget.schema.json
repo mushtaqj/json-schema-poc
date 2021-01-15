@@ -1,0 +1,104 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://cambio.se/schemas/widget.json",
+  "type": "object",
+  "title": "Declarative Widget Schema",
+  "description": "Schema to validate for newly created widgets for Widget Dashboard configuration",
+  "required": [
+    "widgetId",
+    "name",
+    "version"
+  ],
+  "properties": {
+    "widgetId": {
+      "$id": "#/properties/widgetId",
+      "type": "string",
+      "pattern": "",
+      "examples": [
+        "se.cambio.medication:nutrition-and-consumables",
+        "se.cambio.clinicalparameters:clinical-parameters"
+      ]
+    },
+    "name": {
+      "$id": "#/properties/name",
+      "type": "string"
+    },
+    "featureArea": {
+      "$id": "#/properties/featureArea",
+      "type": "string",
+      "examples": [
+        "medication",
+        "care-documentation",
+        "clinical-parameters"
+      ]
+    },
+    "version": {
+      "$id": "#/properties/version",
+      "type": "string",
+      "description": "Semantic versioning of the widget",
+      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
+      "examples": [
+        "1.0.0",
+        "0.0.1"
+      ]
+    },
+    "propertiesSchema": {
+      "$id": "#/properties/propertiesSchema",
+      "type": "string"
+    }
+  },
+  "definitions": {
+    "webSdkExposedProperties": {
+      "$id": "#/properties/webSdkExposedProperties",
+      "type": "object",
+      "properties": {
+        "size": {
+          "$id": "#/properties/dimensions",
+          "type": "object",
+          "title": "The dimensions schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": {},
+          "examples": [
+            {
+              "width": 1,
+              "height": 1
+            }
+          ],
+          "required": [
+            "width",
+            "height"
+          ],
+          "properties": {
+            "width": {
+              "$id": "#/properties/dimensions/properties/width",
+              "type": "integer",
+              "title": "The width schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": 1,
+              "examples": [
+                1
+              ]
+            },
+            "height": {
+              "$id": "#/properties/dimensions/properties/height",
+              "type": "integer",
+              "title": "The height schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": 1,
+              "examples": [
+                1
+              ]
+            }
+          },
+          "additionalProperties": true
+        },
+        "formControlName": {
+          "type": "string"
+        },
+        "color": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

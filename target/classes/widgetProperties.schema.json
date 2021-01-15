@@ -1,0 +1,103 @@
+{
+  "$id": "http://cambio.se/schemas/widgetproperties.json",
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "examples": [
+    {
+      "formControlName": "clinicalParameterWidget",
+      "color": "Extended1",
+      "size": {
+        "width": 2,
+        "height": 2
+      }
+    }
+  ],
+  "title": "The root schema",
+  "type": "object",
+  "properties": {
+    "formControlName": {
+      "$id": "#/properties/formControlName",
+      "type": "string",
+      "title": "The formControlName schema",
+      "description": "An explanation about the purpose of this instance.",
+      "examples": [
+        "clinicalParameterWidget"
+      ]
+    },
+    "color": {
+      "$id": "#/properties/color",
+      "description": "An explanation about the purpose of this instance.",
+      "examples": [
+        "Extended1"
+      ],
+      "title": "The color schema",
+      "enum": [
+        "Extended1",
+        "Extended2",
+        "Extended3",
+        "Extended4",
+        "Extended5",
+        "Extended6",
+        "Extended7",
+        "Extended8",
+        "Extended9",
+        "Extended10",
+        "Extended11",
+        "Extended12",
+        "Extended13",
+        "Extended14"
+      ],
+      "type": "string"
+    },
+    "size": {
+      "$id": "#/properties/size",
+      "type": "object",
+      "title": "The dimensions schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {
+        "width": 2,
+        "height": 2
+      },
+      "examples": [
+        {
+          "width": 2,
+          "height": 2
+        }
+      ],
+      "required": [
+        "width",
+        "height"
+      ],
+      "properties": {
+        "width": {
+          "$id": "#/properties/dimensions/properties/width",
+          "default": 1,
+          "description": "An explanation about the purpose of this instance.",
+          "examples": [
+            1
+          ],
+          "maximum": 2,
+          "minimum": 1,
+          "title": "The width schema",
+          "type": "integer"
+        },
+        "height": {
+          "$id": "#/properties/dimensions/properties/height",
+          "default": 1,
+          "description": "An explanation about the purpose of this instance.",
+          "examples": [
+            2
+          ],
+          "title": "The height schema",
+          "maximum": 2,
+          "minimum": 1,
+          "type": "integer"
+        }
+      }
+    }
+  },
+  "template" : {
+    "$ref" : "#"
+  },
+  "additionalProperties": true
+}

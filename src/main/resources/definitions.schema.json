@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://cambio.se/schemas/definitions.json",
+  "type": "object",
+  "title": "Common Definitions",
+  "description": "Common Shared definitions",
+  "definitions": {
+    "template": {
+      "type": "object",
+      "title": "Template Property",
+      "properties": {
+        "apiUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "valueKey": {
+          "type": "string"
+        },
+        "idKey": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "apiUrl",
+        "valueKey",
+        "idKey"
+      ]
+    }
+  }
+}

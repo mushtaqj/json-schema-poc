@@ -1,0 +1,116 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://cambio.se/schemas/widget.json",
+  "type": "object",
+  "title": "Dashboard config admin widget definition schema",
+  "description": "Schema to define widgets to be used in the dashboard schema",
+  "required": [
+    "widgetId",
+    "name",
+    "version"
+  ],
+  "properties": {
+    "widgetId": {
+      "$id": "#/properties/widgetId",
+      "type": "string",
+      "pattern": "[a-z0-9_-]+:[a-z0-9_-]+:?[a-z0-9_-]+",
+      "examples": [
+        "se.cambio.medication:nutrition-and-consumables",
+        "se.cambio.ordermanagement:labOrders"
+      ]
+    },
+    "name": {
+      "$id": "#/properties/name",
+      "type": "string",
+      "pattern": "([a-zA-Z0-9-]*[a-z]){4}[a-z0-9]*$",
+      "description": "The name should be at least 4 characters long and cannot have any special character other than hyphen",
+      "examples": [
+        "Medication",
+        "Lab Answers",
+        "Lab-Orders"
+      ]
+    },
+    "featureArea": {
+      "$id": "#/properties/featureArea",
+      "type": "string",
+      "examples": [
+        "medication",
+        "care-documentation",
+        "clinical-parameters"
+      ]
+    },
+    "version": {
+      "$id": "#/properties/version",
+      "type": "string",
+      "description": "Semantic versioning of the widget",
+      "pattern": "^((([0-9]+)\\.([0-9]+)\\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)$",
+      "examples": [
+        "1.0.0",
+        "0.0.1"
+      ]
+    },
+    "propertiesSchema": {
+      "$id": "#/properties/propertiesSchema",
+      "type": "string"
+    },
+    "description" : {
+      "$id" : "#/properties/description",
+      "type": "string",
+      "minLength": 10
+    }
+  },
+  "definitions": {
+    "webSdkExposedProperties": {
+      "$id": "#/properties/webSdkExposedProperties",
+      "type": "object",
+      "properties": {
+        "size": {
+          "$id": "#/properties/dimensions",
+          "type": "object",
+          "title": "The dimensions schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": {},
+          "examples": [
+            {
+              "width": 1,
+              "height": 1
+            }
+          ],
+          "required": [
+            "width",
+            "height"
+          ],
+          "properties": {
+            "width": {
+              "$id": "#/properties/dimensions/properties/width",
+              "type": "integer",
+              "title": "The width schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": 1,
+              "examples": [
+                1
+              ]
+            },
+            "height": {
+              "$id": "#/properties/dimensions/properties/height",
+              "type": "integer",
+              "title": "The height schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": 1,
+              "examples": [
+                1
+              ]
+            }
+          },
+          "additionalProperties": true
+        },
+        "formControlName": {
+          "type": "string"
+        },
+        "color": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
