@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "http://cambio.se/schemas/definitions.json",
+  "$id": "http://cambio.se/schemas/widget-properties.schema.json",
   "type": "object",
   "title": "Common Definitions",
   "description": "Common Shared definitions",

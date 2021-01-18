@@ -51,66 +51,13 @@
     },
     "propertiesSchema": {
       "$id": "#/properties/propertiesSchema",
-      "type": "string"
+      "type": "string",
+      "format": "json-pointer"
     },
     "description" : {
       "$id" : "#/properties/description",
       "type": "string",
       "minLength": 10
-    }
-  },
-  "definitions": {
-    "webSdkExposedProperties": {
-      "$id": "#/properties/webSdkExposedProperties",
-      "type": "object",
-      "properties": {
-        "size": {
-          "$id": "#/properties/dimensions",
-          "type": "object",
-          "title": "The dimensions schema",
-          "description": "An explanation about the purpose of this instance.",
-          "default": {},
-          "examples": [
-            {
-              "width": 1,
-              "height": 1
-            }
-          ],
-          "required": [
-            "width",
-            "height"
-          ],
-          "properties": {
-            "width": {
-              "$id": "#/properties/dimensions/properties/width",
-              "type": "integer",
-              "title": "The width schema",
-              "description": "An explanation about the purpose of this instance.",
-              "default": 1,
-              "examples": [
-                1
-              ]
-            },
-            "height": {
-              "$id": "#/properties/dimensions/properties/height",
-              "type": "integer",
-              "title": "The height schema",
-              "description": "An explanation about the purpose of this instance.",
-              "default": 1,
-              "examples": [
-                1
-              ]
-            }
-          },
-          "additionalProperties": true
-        },
-        "formControlName": {
-          "type": "string"
-        },
-        "color": {
-          "type": "string"
-        }
-      }
     }
   }
 }

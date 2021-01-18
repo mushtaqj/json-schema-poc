@@ -2,8 +2,8 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "http://cambio.se/schemas/widget.json",
   "type": "object",
-  "title": "Declarative Widget Schema",
-  "description": "Schema to validate for newly created widgets for Widget Dashboard configuration",
+  "title": "Dashboard config admin widget definition schema",
+  "description": "Schema to define widgets to be used in the dashboard schema",
   "required": [
     "widgetId",
     "name",
@@ -13,15 +13,22 @@
     "widgetId": {
       "$id": "#/properties/widgetId",
       "type": "string",
-      "pattern": "",
+      "pattern": "[a-z0-9_-]+:[a-z0-9_-]+:?[a-z0-9_-]+",
       "examples": [
         "se.cambio.medication:nutrition-and-consumables",
-        "se.cambio.clinicalparameters:clinical-parameters"
+        "se.cambio.ordermanagement:labOrders"
       ]
     },
     "name": {
       "$id": "#/properties/name",
-      "type": "string"
+      "type": "string",
+      "pattern": "([a-zA-Z0-9-]*[a-z]){4}[a-z0-9]*$",
+      "description": "The name should be at least 4 characters long and cannot have any special character other than hyphen",
+      "examples": [
+        "Medication",
+        "Lab Answers",
+        "Lab-Orders"
+      ]
     },
     "featureArea": {
       "$id": "#/properties/featureArea",
@@ -36,7 +43,7 @@
       "$id": "#/properties/version",
       "type": "string",
       "description": "Semantic versioning of the widget",
-      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
+      "pattern": "^((([0-9]+)\\.([0-9]+)\\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)$",
       "examples": [
         "1.0.0",
         "0.0.1"
@@ -45,6 +52,11 @@
     "propertiesSchema": {
       "$id": "#/properties/propertiesSchema",
       "type": "string"
+    },
+    "description" : {
+      "$id" : "#/properties/description",
+      "type": "string",
+      "minLength": 10
     }
   },
   "definitions": {

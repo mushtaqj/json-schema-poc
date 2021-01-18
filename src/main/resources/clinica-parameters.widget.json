@@ -1,4 +1,9 @@
 {
-  "schema" : "http://cambio.se/schemas/widget.json",
-
+  "$schema" : "http://cambio.se/schemas/widget.json",
+  "widgetId" : "mediation:nutrition-and-consumables",
+  "name": "Medication",
+  "version": "1.0.0",
+  "description": "Medication Widget",
+  "featureArea": "Medication",
+  "propertiesSchema": "http://cambio.se/schemas/definitions.json"
 }

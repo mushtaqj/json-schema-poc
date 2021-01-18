@@ -2,8 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "http://cambio.se/schemas/definitions.json",
   "type": "object",
-  "title": "Common Definitions",
-  "description": "Common Shared definitions",
+  "description": "Common Shared definitions for Widget dashboard",
   "definitions": {
     "template": {
       "type": "object",
@@ -25,6 +24,41 @@
         "valueKey",
         "idKey"
       ]
+    },
+    "color": {
+      "$id": "#/properties/color",
+      "description": "The color given to the widget title",
+      "examples": [
+        "Extended1"
+      ],
+      "title": "The color schema",
+      "enum": [
+        "Extended1",
+        "Extended2",
+        "Extended3",
+        "Extended4",
+        "Extended5",
+        "Extended6",
+        "Extended7",
+        "Extended8",
+        "Extended9",
+        "Extended10",
+        "Extended11",
+        "Extended12",
+        "Extended13",
+        "Extended14"
+      ],
+      "type": "string"
+    },
+    "formControlName": {
+      "$id": "#/properties/formControlName",
+      "type": "string",
+      "title": "Form Control Name for the widget",
+      "description": "A name referenced by the dashboard to send/receive events from the widget, should be unique",
+      "examples": [
+        "clinicalParameterWidgetFormControl"
+      ],
+      "minLength": 5
     }
   }
 }

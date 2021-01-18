@@ -1,7 +1,7 @@
 {
-  "$id": "http://cambio.se/schemas/widgetproperties.json",
+  "$id": "http://cambio.se/schemas/widget-properties.json",
   "$schema": "http://json-schema.org/draft-07/schema",
-  "description": "The root schema comprises the entire JSON document.",
+  "description": "Represents a single widget",
   "examples": [
     {
       "formControlName": "clinicalParameterWidget",
@@ -16,38 +16,10 @@
   "type": "object",
   "properties": {
     "formControlName": {
-      "$id": "#/properties/formControlName",
-      "type": "string",
-      "title": "The formControlName schema",
-      "description": "An explanation about the purpose of this instance.",
-      "examples": [
-        "clinicalParameterWidget"
-      ]
+      "$ref": "definitions.schema.json#/definitions/formControlName"
     },
     "color": {
-      "$id": "#/properties/color",
-      "description": "An explanation about the purpose of this instance.",
-      "examples": [
-        "Extended1"
-      ],
-      "title": "The color schema",
-      "enum": [
-        "Extended1",
-        "Extended2",
-        "Extended3",
-        "Extended4",
-        "Extended5",
-        "Extended6",
-        "Extended7",
-        "Extended8",
-        "Extended9",
-        "Extended10",
-        "Extended11",
-        "Extended12",
-        "Extended13",
-        "Extended14"
-      ],
-      "type": "string"
+      "$ref": "definitions.schema.json#/definitions/color"
     },
     "size": {
       "$id": "#/properties/size",
@@ -95,9 +67,6 @@
         }
       }
     }
-  },
-  "template" : {
-    "$ref" : "#"
   },
   "additionalProperties": true
 }
