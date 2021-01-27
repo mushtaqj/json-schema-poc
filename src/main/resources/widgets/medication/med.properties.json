@@ -1,0 +1,8 @@
+{
+  "formControlName" : "medication",
+  "color" : "Extended1",
+  "size" : {
+    "width" : 1,
+    "height" : 2
+  }
+}

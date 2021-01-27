@@ -1,0 +1,51 @@
+{
+  "$schema": "http://cambio.se/schemas/widget.json",
+  "widgetId": "medication:consumable-and-nutrition",
+  "name": "Medication",
+  "version": "1.0.0",
+  "description": "Medication Widget",
+  "featureArea": "Medication",
+  "propertiesSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://cambio.se/schemas/med-cnn-widget-properties.json",
+    "description": "Represents the overrideable properties supported by the medication widget",
+    "allOf": [
+      {
+        "$ref": "file:src/main/resources/core/widget-properties-base.schema.json"
+      },
+      {
+        "properties": {
+          "size": {
+            "type": "object",
+            "examples": [
+              {
+                "width": 1,
+                "height": 1
+              }
+            ],
+            "required": [
+              "width",
+              "height"
+            ],
+            "properties": {
+              "width": {
+                "$id": "#/properties/dimensions/properties/width",
+                "maximum": 1,
+                "minimum": 1,
+                "title": "The width of the Widget",
+                "type": "integer"
+              },
+              "height": {
+                "$id": "#/properties/dimensions/properties/height",
+                "title": "The height schema",
+                "maximum": 2,
+                "minimum": 1,
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

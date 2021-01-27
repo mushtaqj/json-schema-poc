@@ -1,1 +1,8 @@
+se\cambio\jsonschema\json\DashboardsJSON.class
 se\cambio\jsonschema\App.class
+se\cambio\jsonschema\util\FileReader.class
+se\cambio\jsonschema\json\WidgetPropertiesJSON.class
+se\cambio\jsonschema\json\LocaleStringJSON.class
+se\cambio\jsonschema\json\WidgetJSON.class
+se\cambio\jsonschema\json\DashboardJSON.class
+se\cambio\jsonschema\util\JSONHelper.class

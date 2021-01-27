@@ -1,0 +1,25 @@
+{
+  "$id": "http://cambio.se/schemas/widget-properties-base.json",
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "description": "Represents the base properties supported by a widget, any widget should at least support the as a minimum",
+  "examples": [
+    {
+      "formControlName": "clinicalParameterWidget",
+      "color": "Extended1",
+      "size": {
+        "width": 2,
+        "height": 2
+      }
+    }
+  ],
+  "title": "The root schema",
+  "type": "object",
+  "properties": {
+    "formControlName": {
+      "$ref": "file:src/main/resources/core/definitions.schema.json#/definitions/formControlName"
+    },
+    "color": {
+      "$ref": "file:src/main/resources/core/definitions.schema.json#/definitions/color"
+    }
+  }
+}

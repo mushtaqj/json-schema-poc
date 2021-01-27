@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "http://cambio.se/schemas/definitions.json",
   "type": "object",
-  "description": "Common Shared definitions for Widget dashboard",
+  "description": "Common Shared definitions for Widget Properties",
   "definitions": {
     "template": {
       "type": "object",
@@ -23,7 +23,8 @@
         "apiUrl",
         "valueKey",
         "idKey"
-      ]
+      ],
+      "additionalProperties": false
     },
     "color": {
       "$id": "#/properties/color",
@@ -48,7 +49,8 @@
         "Extended13",
         "Extended14"
       ],
-      "type": "string"
+      "type": "string",
+      "additionalProperties": false
     },
     "formControlName": {
       "$id": "#/properties/formControlName",
@@ -58,7 +60,53 @@
       "examples": [
         "clinicalParameterWidgetFormControl"
       ],
-      "minLength": 5
+      "minLength": 5,
+      "additionalProperties": false
+    },
+    "size": {
+      "$id": "#/properties/size",
+      "type": "object",
+      "title": "The size schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {
+        "width": 1,
+        "height": 1
+      },
+      "examples": [
+        {
+          "width": 1,
+          "height": 1
+        }
+      ],
+      "required": [
+        "width",
+        "height"
+      ],
+      "properties": {
+        "width": {
+          "$id": "#/properties/dimensions/properties/width",
+          "default": 1,
+          "examples": [
+            1
+          ],
+          "maximum": 1,
+          "minimum": 1,
+          "title": "The width of the Widget",
+          "type": "integer"
+        },
+        "height": {
+          "$id": "#/properties/dimensions/properties/height",
+          "default": 1,
+          "examples": [
+            1
+          ],
+          "title": "The height schema",
+          "maximum": 1,
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
     }
   }
 }
