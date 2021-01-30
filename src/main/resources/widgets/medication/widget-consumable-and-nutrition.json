@@ -11,7 +11,7 @@
     "description": "Represents the overrideable properties supported by the medication widget",
     "allOf": [
       {
-        "$ref": "file:src/main/resources/core/widget-properties-base.schema.json"
+        "$ref": "classpath://core/widget-properties-base.schema.json"
       },
       {
         "properties": {

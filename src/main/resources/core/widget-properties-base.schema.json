@@ -16,10 +16,10 @@
   "type": "object",
   "properties": {
     "formControlName": {
-      "$ref": "file:src/main/resources/core/definitions.schema.json#/definitions/formControlName"
+      "$ref": "classpath://core/definitions.schema.json#/definitions/formControlName"
     },
     "color": {
-      "$ref": "file:src/main/resources/core/definitions.schema.json#/definitions/color"
+      "$ref": "classpath://core/definitions.schema.json#/definitions/color"
     }
   }
 }
