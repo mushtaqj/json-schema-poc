@@ -8,7 +8,8 @@
     "widgetId",
     "name",
     "featureArea",
-    "version"
+    "version",
+    "propertiesSchema"
   ],
   "properties": {
     "widgetId": {

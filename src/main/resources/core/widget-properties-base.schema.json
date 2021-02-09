@@ -7,19 +7,51 @@
       "formControlName": "clinicalParameterWidget",
       "color": "Extended1",
       "size": {
-        "width": 2,
-        "height": 2
+        "width": 1,
+        "height": 1
       }
     }
   ],
-  "title": "The root schema",
+  "title": "The base schema for widget properties which all other widgets should adhere to",
   "type": "object",
+  "minProperties": 3,
   "properties": {
-    "formControlName": {
-      "$ref": "classpath://core/definitions.schema.json#/definitions/formControlName"
-    },
     "color": {
-      "$ref": "classpath://core/definitions.schema.json#/definitions/color"
+      "$id": "#/properties/color",
+      "description": "The color given to the widget title",
+      "examples": [
+        "Extended1"
+      ],
+      "title": "The color schema",
+      "enum": [
+        "Extended1",
+        "Extended2",
+        "Extended3",
+        "Extended4",
+        "Extended5",
+        "Extended6",
+        "Extended7",
+        "Extended8",
+        "Extended9",
+        "Extended10",
+        "Extended11",
+        "Extended12",
+        "Extended13",
+        "Extended14"
+      ],
+      "type": "string",
+      "additionalProperties": false
+    },
+    "formControlName": {
+      "$id": "#/properties/formControlName",
+      "type": "string",
+      "title": "Form Control Name for the widget",
+      "description": "A name referenced by the dashboard to send/receive events from the widget, should be unique",
+      "examples": [
+        "clinicalParameterWidgetFormControl"
+      ],
+      "minLength": 5,
+      "additionalProperties": false
     }
   }
 }
